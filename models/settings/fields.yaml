@@ -1,0 +1,53 @@
+fields:
+  _section_sync:
+    type: section
+    label: "Users sync settings"
+    comment: "
+      The Laravel-Firebase package use a Generator for list users.<br />
+      More info:
+      <a href='https://firebase-php.readthedocs.io/en/stable/user-management.html#list-users' target='_blank'>
+        https://firebase-php.readthedocs.io/en/stable/user-management.html#list-users
+      </a>
+    "
+    commentHtml: true
+  sync_auto_enabled:
+    type: switch
+    span: auto
+    label: "Enable automatic synchronization"
+    commentAbove: "
+      You need to setting up the scheduler first. More info:
+      <a href='https://wintercms.com/docs/setup/installation#crontab-setup' target='_blank'>
+        https://wintercms.com/docs/setup/installation#crontab-setup
+      </a>
+    "
+    commentHtml: true
+  sync_auto_frequency:
+    type: dropdown
+    span: auto
+    label: "Frequency of automatic synchronization"
+    default: everyTenMinutes
+    options:
+      everyMinute: 'Every minute'
+      everyFiveMinutes: 'Every 5 minutes'
+      everyTenMinutes: 'Every 10 minutes'
+      everyFifteenMinutes: 'Every 15 minutes'
+      everyThirtyMinutes: 'Every 30 minutes'
+      hourly: 'Hourly'
+      daily: 'Daily'
+      weekly: 'Weekly'
+    trigger:
+      action: show
+      field: sync_auto_enabled
+      condition: checked
+  sync_max_results:
+    type: number
+    span: auto
+    label: "Max results"
+    commentAbove: "Maximum number of users to get from Firebase"
+    default: 1000
+  sync_batch_size:
+    type: number
+    span: auto
+    label: "Batch size"
+    commentAbove: "Number of results obtained in each batch"
+    default: 1000

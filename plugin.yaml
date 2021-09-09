@@ -1,0 +1,10 @@
+plugin:
+    name: "norotaro.firebaseusers::lang.plugin.name"
+    description: "norotaro.firebaseusers::lang.plugin.description"
+    author: Norotaro
+    icon: oc-icon-users
+    homepage: ""
+permissions:
+    norotaro.firebaseusers.access_settings:
+        tab: "norotaro.firebase::lang.plugin.name"
+        label: "norotaro.firebaseusers::lang.permissions.access_settings"
