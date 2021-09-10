@@ -27,6 +27,17 @@ After configure [Firebase Plugin](https://github.com/norotaro/wn-firebase-plugin
 php artisan firebaseusers:sync
 ```
 
+### Protect endpoints
+You can use the `AuthenticationControl` middleware for protect an endpoint, this middleware expect a valid bearer token that is verified against Firebase.
+
+```php
+<?php
+Route::middleware([\Norotaro\FirebaseUsers\Middlewares\AuthenticationControl::class])
+    ->group(function () {
+    // All routes here will require a valid Firebase bearer token
+});
+```
+
 ## Suport
 
 - [Issue Tracker (WinterCMS Plugin)](https://github.com/norotaro/wn-firebaseusers-plugin/issues/)
