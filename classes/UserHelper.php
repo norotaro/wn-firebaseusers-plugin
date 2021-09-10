@@ -1,6 +1,6 @@
 <?php
 
-namespace Norotaro\FirebaseAuth\Classes;
+namespace Norotaro\FirebaseUsers\Classes;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
