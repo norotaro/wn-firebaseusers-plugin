@@ -3,7 +3,7 @@
 namespace Norotaro\FirebaseUsers\Console;
 
 use Illuminate\Console\Command;
-use Norotaro\FirebaseAuth\Classes\UserHelper;
+use Norotaro\FirebaseUsers\Classes\UserHelper;
 use Norotaro\FirebaseUsers\Models\Settings;
 use Symfony\Component\Console\Input\InputOption;
 
