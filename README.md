@@ -3,6 +3,7 @@
 Synchronize users between Firebase and `Winter.Users`.
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [Support](#support)
 - [License](#license)
 
@@ -17,6 +18,13 @@ Then run the migration files with:
 
 ```sh
 php artisan winter:up
+```
+
+## Usage
+After configure [Firebase Plugin](https://github.com/norotaro/wn-firebase-plugin/#configuration) you can run the following command for synchronize user:
+
+```sh
+php artisan firebaseusers:sync
 ```
 
 ## Suport
