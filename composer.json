@@ -26,6 +26,7 @@
     },
     "require": {
         "winter/wn-user-plugin": "^2.0",
-        "norotaro/wn-firebase-plugin": "^1.0"
+        "norotaro/wn-firebase-plugin": "^1.0",
+        "norotaro/wn-rest-plugin": "^1.0"
     }
 }
