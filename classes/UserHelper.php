@@ -12,9 +12,11 @@ class UserHelper
 
     public function userToArray(UserRecord $user): array
     {
+        $userEmail = $this->getUserEmail($user);
+
         return [
             'name' => $user->displayName,
-            'email' => $this->getUserEmail($user),
+            'email' => $userEmail,
             'password' => Str::random(8),
             'is_activated' => $user->emailVerified,
             'activated_at' => $user->emailVerified ? Carbon::instance($user->metadata->createdAt) : null,
@@ -23,7 +25,7 @@ class UserHelper
             'updated_at' => $user->metadata->lastRefreshAt ? Carbon::instance($user->metadata->lastRefreshAt) : null,
             'deleted_at' => $user->disabled ? Carbon::now() : null,
             'last_seen' => $user->metadata->lastLoginAt ? Carbon::instance($user->metadata->lastLoginAt) : null,
-            'username' => $user->displayName,
+            'username' => $userEmail ?: $user->displayName ?: $user->uid,
             'fb_uid' => $user->uid,
             'fb_sync' => true,
         ];
