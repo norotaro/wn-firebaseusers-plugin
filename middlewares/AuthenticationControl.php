@@ -2,10 +2,10 @@
 
 namespace Norotaro\FirebaseAuth\Middlewares;
 
-use App;
 use Firebase\Auth\Token\Exception\InvalidToken;
 use Illuminate\Http\Request;
 use Log;
+use Norotaro\Rest\Exceptions\ApiException;
 use Winter\User\Models\User;
 
 class AuthenticationControl
@@ -45,12 +45,12 @@ class AuthenticationControl
             return $next($request);
         } catch (InvalidToken $e) {
             Log::error('The token is invalid: ' . $e->getMessage());
-            App::abort(403, 'The token is invalid');
+            throw new ApiException(403, 'The token is invalid');
         } catch (\InvalidArgumentException $e) {
             Log::error('The token could not be parsed: ' . $e->getMessage());
-            App::abort(403, 'The token could not be parsed');
+            throw new ApiException(400, 'The token could not be parsed');
         }
 
-        App::abort(403, 'You are not authenticated');
+        throw new ApiException(401, 'You are not authenticated');
     }
 }
