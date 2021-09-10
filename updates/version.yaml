@@ -3,3 +3,6 @@
 1.0.2:
     - "Updated table user"
     - migration102.php
+1.0.3:
+    - "Updated table user"
+    - migration103.php
