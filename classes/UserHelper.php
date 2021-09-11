@@ -25,7 +25,7 @@ class UserHelper
             'updated_at' => $user->metadata->lastRefreshAt ? Carbon::instance($user->metadata->lastRefreshAt) : null,
             'deleted_at' => $user->disabled ? Carbon::now() : null,
             'last_seen' => $user->metadata->lastLoginAt ? Carbon::instance($user->metadata->lastLoginAt) : null,
-            'username' => $userEmail ?: $user->displayName ?: $user->uid,
+            'username' => $user->uid,
             'fb_uid' => $user->uid,
             'fb_sync' => true,
         ];
