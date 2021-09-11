@@ -32,9 +32,6 @@ php artisan firebaseusers:sync
 ### Protect endpoints
 You can use the `AuthenticationControl` middleware for protect an endpoint, this middleware expect a valid bearer token that is verified against Firebase.
 
-## Users table modifications
-This plugin adds `fb_uid` and `fb_sync` columns on `users` table, and also change the definition of the `email` column to allow null values and remove the unique restriction.
-
 ```php
 <?php
 Route::middleware([\Norotaro\FirebaseUsers\Middlewares\AuthenticationControl::class])
@@ -42,6 +39,9 @@ Route::middleware([\Norotaro\FirebaseUsers\Middlewares\AuthenticationControl::cl
     // All routes here will require a valid Firebase bearer token
 });
 ```
+
+## Users table modifications
+This plugin adds `fb_uid` and `fb_sync` columns on `users` table, and also change the definition of the `email` column to allow null values and remove the unique restriction.
 
 ## Suport
 
